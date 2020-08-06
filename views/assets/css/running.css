@@ -1,0 +1,130 @@
+#running_Main{
+    position:relative;        
+    width:100%;
+}
+
+#running_Main .list{
+    padding:0;
+    display: inline-block;
+    width:30%;
+    float:left;
+    margin:2.3%;    
+    height:80vh;
+    background-color:ghostwhite;
+    border:2px solid black;
+    border-radius: 10px;
+}
+
+#running_Main .list .title{
+    display:block;
+    text-align:center;
+    font-size:1.4em;
+    background-color:gray;
+    padding:0.3em;
+    border-bottom:2px solid black;
+    border-top-right-radius:6px;
+    border-top-left-radius:6px;
+    font-weight:bold;
+}
+
+#running_Main .list ul{
+    list-style: none;
+    margin:0px;   
+    padding-left: 1em;
+}
+
+#running_Main .list ul li[class="select"]::before{
+    content:"=";
+}
+
+#running_Main .list ul li{
+    font-size:1.2em;
+}
+
+#running_Main .list ul li[class="child"]{
+    padding-left: 1.2em;
+}
+
+#running_Main .list ul li[class="child"]::before{
+    content:"~";
+}
+
+#running_Main .list ul li[class="child"]:hover{
+    background-color:aquamarine;
+}
+
+
+#running_Main .list ul li[class="select"]:hover{
+    background-color:aqua;
+    cursor:pointer;
+}
+#running_Main .list a[class="down"]::before{ 
+    content:'V';    
+    float:right;
+    opacity: 0.5;
+    margin:0 1em 0 0;
+}
+
+#running_Main .UI{
+    padding:0;
+    display: inline-block;
+    margin: 2.3%;
+    width: 60%;    
+    height: 80vh;
+    border:2px solid black;
+    border-radius: 10px;
+}
+
+#running_Main .UI .UI_title{
+    display:block;
+    text-align:center;
+    font-size:1.4em;
+    background-color:gray;
+    padding:0.3em;
+    border-bottom:2px solid black;
+    border-top-right-radius:6px;
+    border-top-left-radius:6px;
+    font-weight:bold;
+}
+
+@media screen and (max-width: 1015px){   
+    #running_Main .UI{
+        float:none;
+        height:50vh;
+        display:block;
+        width:93%;
+        margin:3.5%;
+    }
+    #running_Main .list{
+        height:20vh;
+        float:none;
+        display:block;
+        width:93%;
+        margin:3.5%;
+        overflow-y:auto;
+    }
+}
+
+@media screen and (max-width: 980px){
+    #running_Main{
+        top:0;
+        width:100%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #running_Main .UI{
+        display:55vh;
+    }
+    
+    #running_Main .list{
+        height:30vh;
+    }
+}
+ul .invisible{
+    display: none;
+}
+
+ul .visible{
+    display:block;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mega - 가정용 동작</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/running.css">
+
+    <script defer src="../../assets/js/css_main.js"></script>    
+    <script defer src="../../assets/js/running.js"></script>
+</head>
+<body>
+    <!-- 상단바 -->	
+		<div class="main">
+			<!-- header -->
+			<header id="main-header"class="main">    
+				<a href="../../index.html"><img class="logo" src="../../images/logo/logo_transparent_wide.png">
+					<img class="logo-mini" src="../../images/logo/logo_transparent_mini.png"></a>
+				<!-- <div class="location">ss</div> -->
+				<ul class="menu-bar">
+					<a href="../../login.html" class="login"><li>Login</li></a>
+					<li class="menu-button">Menu</li>
+				</ul>
+            </header>
+            <!-- action bar -->
+            <div class="action-bar">
+                <ul class="content">
+                    <li>Main</li>
+                    <li>Home</li>
+                    <li>Running</li>
+                </ul>
+                <i class="fas fa-angle-right action-bar-button"></i>     
+            </div>
+			<!-- nav -->
+			<div id="menu-select" class="invisible">            
+				<ul>
+					<li class="menu-item">1</li>
+					<li class="menu-item">2</li>
+					<li class="menu-item">3</li>                
+				</ul>
+			</div>
+		</div>
+    
+    <div id="running_Main">
+        <div id="running_main_list" class="list">
+            <span class="title">목 록</span>
+            <ul id="running-menu-bar">
+                <li id="f0" class="select">기능<a class="down"></a></li>            
+                    <ul id="byf0" class="invisible">
+                    <li id="f1"class="select">공간<a class="down"></a></li>
+                        <ul id="byf1" class="invisible">
+                            <li id="f2" class="select">거실<a class="down"></a></li>
+                                <ul id="byf2" class="invisible">
+                                    <li class="child">Tv</li>
+                                    <li class="child">에어컨</li>
+                                    <li class="child">창문</li>
+                                </ul>
+                            <li id="f3" class="select">침실<a class="down"></a></li>
+                                <ul id="byf3" class="invisible">
+                                    <li class="child">Tv</li>
+                                    <li class="child">에어컨</li>
+                                    <li class="child">창문</li>
+                                </ul>
+                            <li id="f4" class="select">화장실<a class="down"></a></li>
+                                <ul id="byf4" class="invisible">
+                                    <li class="child">Tv</li>
+                                    <li class="child">에어컨</li>
+                                    <li class="child">창문</li>
+                                </ul>
+                        </ul> 
+                    </ul>                                
+            </ul>
+            
+        </div>
+        <div id="running_main_UI" class="UI">
+            <span class="UI_title">Interface</span>
+        </div>        
+		<a href="home_setting.html">가정용 설정 바로가기</a>
+    </div>    
+</body>
+</html>
