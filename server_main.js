@@ -38,13 +38,6 @@ app.use(function (req, res, next) {
 });//메인 페이지 호출
 
 */
-/*
-app.use(function(req,res,next){
-   console.log('첫 미들웨어 메인페이지 응답');
-   
-       
-   // res.send(views/index.html);
-});*/
 
 
 http.createServer(app).listen(app.get('port'), function () {
