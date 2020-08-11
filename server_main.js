@@ -4,16 +4,13 @@ var static = require('serve-static');// 특정 폴더의 파일들을특정 패�
 var path = require('path');//경로
 var bodyParser = require('body-parser');
 var app = express();
-
+var router = require();
 
 
 //res 응답 req 요청
 /*
 user_data =JSON.stringify(data);
 */
-
-
-
 
 app.set('port', process.env.PORT || 3000);
 app.use('/views', static(path.join(__dirname, 'views')));//--dirmane : js 파일이 있는 폴더경로
