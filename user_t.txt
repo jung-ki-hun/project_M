@@ -1,0 +1,25 @@
+user.json 주석용 텍스트 파일
+{
+    "Name" : "jung ki hum",//사용자의 이름
+    "Birthday" :  "1997.01.30", // 사용자의 생년월일
+  "Have_Machine" : [
+        {"home":"H_0001","Factory":"F_0001","Office":"O_0001"}
+    ],// 보유기기 시리얼 번호
+    /* 시리얼 번호 명령규칙
+    장소_번호
+    장소 : 가정 -> H, 공장 -> F, 사무 -> O
+    */
+    "Class" : "master",//계정의 등급
+    /*
+    master -> 최고 등급(관리자, 모든것을 제어 및 관리)
+    General -> 일반(사원, 최고 등급이 부여해준 권한내에서만 사용가능)
+    Guest -> 손님(읽기 권한만 부여)
+    */
+    "Login_Api" : [
+        {"Platform":"naver","id":"14124","pw":"512512"}
+    ],// 로그인 데이터 저장..추후 sql로 저장될수 있음
+   "Home_setting" :[
+       {"Background_c" : "black","font":"맑은 고딕","font_size":"10pt"}
+   ]//
+
+}
