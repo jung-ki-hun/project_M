@@ -17,7 +17,7 @@
 					<img class="logo-mini" src="../../images/logo/logo_transparent_mini.png"></a>
 				<!-- <div class="location">ss</div> -->
 				<ul class="menu-bar">
-					<a href="../../login.html" class="login"><li>Login</li></a>
+					<li class="login">Login</li>
 					<li class="menu-button">Menu</li>
 				</ul>
             </header>
@@ -33,48 +33,92 @@
 			<!-- nav -->
 			<div id="menu-select" class="invisible">            
 				<ul>
-					<li class="menu-item">1</li>
+					<li class="menu-item myinfo">
+                        <div class="user">
+                            <img src="" alt="">
+                            <span class="name">이병진</span>
+                            <span class="logout">로그아웃</span>
+                            <span class="mail">dlqudwls714@gmail.com</span>
+                        </div>
+                        <div class="link">
+                            <a href="">내 정보</a>
+                            <a href="">설정</a>
+                            <a href="">3</a>
+                            <a href="">4</a>
+                        </div>
+                    </li>
 					<li class="menu-item">2</li>
 					<li class="menu-item">3</li>                
 				</ul>
 			</div>
-		</div>
+        </div>
+
+
+
     
-    <div id="running_Main">
-        <div id="running_main_list" class="list">
-            <span class="title">목 록</span>
-            <ul id="running-menu-bar">
-                <li id="f0" class="select">기능<a class="down"></a></li>            
-                    <ul id="byf0" class="invisible">
-                    <li id="f1"class="select">공간<a class="down"></a></li>
-                        <ul id="byf1" class="invisible">
-                            <li id="f2" class="select">거실<a class="down"></a></li>
-                                <ul id="byf2" class="invisible">
-                                    <li class="child">Tv</li>
-                                    <li class="child">에어컨</li>
-                                    <li class="child">창문</li>
-                                </ul>
-                            <li id="f3" class="select">침실<a class="down"></a></li>
-                                <ul id="byf3" class="invisible">
-                                    <li class="child">Tv</li>
-                                    <li class="child">에어컨</li>
-                                    <li class="child">창문</li>
-                                </ul>
-                            <li id="f4" class="select">화장실<a class="down"></a></li>
-                                <ul id="byf4" class="invisible">
-                                    <li class="child">Tv</li>
-                                    <li class="child">에어컨</li>
-                                    <li class="child">창문</li>
-                                </ul>
-                        </ul> 
-                    </ul>                                
-            </ul>
+    <div class="running">
+        <div class="list">
+            <div id=list_root class="reload">
+                <span class="select-name">목록</span>                                
+                <i class="fas fa-redo select-reload"></i>  
+            </div>
+            <div id="bylist_root">
+                <div id=list_space class="select select">
+                    <span class="select-name select">공간</span>
+                    <i class="fas fa-chevron-circle-left select-arrow select"></i>
+                </div>
+                <ul id="bylist_space" class="invisible">
+                </ul>                    
+            </div>
             
         </div>
-        <div id="running_main_UI" class="UI">
-            <span class="UI_title">Interface</span>
+        <div class="list-ui">
+            <div class="ui-title">
+                Info
+            </div>
+            <div class="view">
+                <fieldset>
+                    <legend>온도</legend>
+                    <div id="temperature" class="box">
+                        <fieldset>
+                            <legend>Min</legend>
+                            <span id="tempMin"></span>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Current</legend>
+                            <span id="tempCurrent"></span>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Max</legend>
+                            <span id="tempMax"></span>
+                        </fieldset>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>습도</legend>
+                    <div id="humidity" class="box">
+                        <fieldset>
+                            <legend>Min</legend>
+                            <span id="humidMin"></span>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Current</legend>
+                            <span id="humidCurrent"></span>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Max</legend>
+                            <span id="humidMax"></span>
+                        </fieldset>
+                    </div>
+                </fieldset><br>
+                <img src="../../images/running/season.jpg" alt="">
+                <select name="season" id="season">
+                    <option value="0">봄 가을</option>
+                    <option value="1">여름</option>
+                    <option value="2">겨울</option>
+                </select>
+            </div>
         </div>        
-		<a href="home_setting.html">가정용 설정 바로가기</a>
-    </div>    
+    </div>
 </body>
 </html>

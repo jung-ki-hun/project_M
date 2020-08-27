@@ -12,14 +12,14 @@
     --duration-animation-header: 0.2s;
 
     /* nav 색상 크기 제어 */
-    --size-width-nav:20%;
+    --size-width-nav:300px;
     --font-nav-sub:1.5em;
     --color-font-default-nav:rgba(255, 255, 255, 0.75);
     --color-font-hover-nav:#fff;
-    --color-background-nav:#424242;
+    --color-background-nav:#81b9bf;
     --color-border-nav: #cfcfcf;
     --padding-nav:1.5em;
-    --duration-animation-nav: 0.5s;
+    --duration-animation-nav: 0.3s;
 
     /* action bar 색상 크기 제어 */
     --size-width-action-bar:20em;
@@ -240,6 +240,9 @@ ul{
     color:var(--color-white-default-post);
     background-color: var(--color-style-one-post);
 }
+.main .invisible{
+    display:none;
+}
 
 /* header */
 .main > header.main{
@@ -302,12 +305,13 @@ ul{
 .main > #menu-select{
     display:flex;
     flex-direction:column;
+    align-items: center;
     text-align:left;
     color:var(--color-font-default-nav);
-    background-color:#424242;
-    padding: var(--padding-nav) 0 0 var(--padding-nav);
+    background-color:var(--color-background-nav);
+    padding: 0;
     height:100%;
-    width:var(--size-width-nav);
+    width:calc(var(--size-width-nav) + var(--padding-nav));
     position: fixed;
     top:var(--size-header);
     right:calc(-1 * (var(--padding-nav) + var(--size-width-nav)));
@@ -335,9 +339,77 @@ ul{
 .main > #menu-select a{
     color:var(--color-font-default-nav);
 }
-    .menu-item:first-child,.menu-item:last-child{
+    .menu-item:last-child{
         border:none !important;
     }
+
+.main > #menu-select .myinfo{
+    display:grid;
+    grid-template-areas: 
+    "user"    
+    "link";     
+    width:var(--size-width-nav);
+    margin-top:calc(var(--padding-nav)/2);
+    background:#80cbc4;
+    height:120px;
+    font-size:15px;
+    border:1px solid #fff;
+}
+.main > #menu-select .myinfo .user{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(2,1fr);
+    grid-template-areas: 
+    "picture name logout"
+    "picture mail .";
+    grid-area: user;
+    height:90px;
+}
+.main > #menu-select .myinfo .user img{
+    grid-area: picture;    
+    margin:15px;
+    width:60px;
+    height:60px;
+    border:1px solid #fff;
+}
+.main > #menu-select .myinfo .user .name{
+    grid-area: name;
+    color:rgba(0,0,0,0.7);
+    font-weight: bold;    
+    margin-top:17px;    
+}
+.main > #menu-select .myinfo .user .mail{
+    grid-area: mail;
+    color:rgba(0,0,0,0.5);
+    font-size:11px;    
+}
+.main > #menu-select .myinfo .user .logout{
+    grid-area: logout;
+    margin-top:15px;
+    position: relative;
+    left:-8px;
+    font-size:14px;
+    background:#4f9a94;
+    border-radius: 20px;
+    height: 25px;
+    line-height: 25px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.main > #menu-select .myinfo .link{
+    display:grid;    
+    grid-area: link;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    background:#79b8b1d7;
+    border-top:1px solid #fff;
+}
+.main > #menu-select .myinfo .link a{
+    text-align:center;
+    border-right:1px solid #fff;
+}
+
 /* action bar */
 .main > .action-bar{    
     width:var(--size-width-action-bar);
@@ -465,6 +537,7 @@ ul{
 .main > .banner .banner-inner .banner-button-box li:hover{
     background-color:var(--color-change-button);
 }
+/* loginpop */
 
 /* post */
 .main > .post{

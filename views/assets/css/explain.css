@@ -59,6 +59,91 @@
     font-weight:bold;
     font-size:1.3em;
 }
+@media screen and (max-width: 1230px)
+{
+    .explain > .character{        
+        width: 55em;
+    }
+    .explain > .character .character-explain{
+        flex-flow:column;
+        width:inherit;                   
+    }
+    .explain > .character .character-explain li:nth-child(even){
+        align-self:flex-end;
+    }
+    .explain > .character .character-explain li:nth-child(even) .explain-sub{        
+        margin-left:0em;                         
+    }
+    .explain > .character .character-explain li:nth-child(even) img{
+        float:right;        
+    }
+}
+@media screen and (max-width: 965px)
+{
+    .explain > .character{        
+        width: 35em;
+    }    
+    .explain > .character .character-explain li:nth-child(even){
+        align-self:center;
+    }
+    .explain > .character .character-explain li{
+        align-self: center;
+        border-radius: 1em;        
+        margin-bottom: 1em;
+    }
+    .explain > .character .character-explain li img{
+        float:left;
+        width: 6em;
+        height:6em;
+        margin:0.3em;
+    }
+    .explain > .character .character-explain li:nth-child(even) .explain-sub{        
+        margin-left:9.5em;                         
+    }
+    .explain > .character .character-explain li:nth-child(even) img{
+        float:left;        
+    }
+    .explain > .character .character-explain li .explain-sub .title{            
+        font-size:1.2em;
+    }
+}
+@media screen and (max-width: 650px)
+{
+    .explain > .character{        
+        width: 30em;
+    }        
+    .explain > .character .character-explain li{
+        width: 26em;
+        align-self: center;
+        border-radius: 1em;        
+        margin-bottom: 1em;
+    }    
+    .explain > .character .character-explain li .explain-sub{        
+        width: 21em;
+    }    
+    .explain > .character .character-explain li .explain-sub .title{            
+        font-size:1.1em;
+    }
+}
+@media screen and (max-width: 560px)
+{
+    .explain > .character{        
+        width: 28em;
+    }        
+    .explain > .character .character-explain li{
+        width: 24em;
+        align-self: center;
+        border-radius: 1em;        
+        margin-bottom: 1em;
+        padding: 1em;
+    }    
+    .explain > .character .character-explain li .explain-sub{        
+        width: 18em;
+    }    
+    .explain > .character .character-explain li .explain-sub .title{            
+        font-size:1em;
+    }
+}
 
 /* 기기 사양 */
 .explain > .specification{
@@ -118,3 +203,34 @@
     margin: 0 0.5em;
     color:red;
 }
+@media screen and (max-width: 1230px)
+{
+    .explain > .specification{
+        width: 55em;
+    }
+}
+@media screen and (max-width: 965px)
+{
+    .explain > .specification{
+        width: 34em;
+    }
+    .explain > .specification .specification-explain{
+        font-size: 1em;
+    }
+    .explain > .specification .specification-explain th{
+        width:9em;
+    }
+}
+@media screen and (max-width: 650px)
+{
+    .explain > .specification{
+        width: 26em;
+    }
+    .explain > .specification .specification-explain{
+        font-size: 1em;
+    }
+    .explain > .specification .specification-explain th{
+        width:8em;
+    }
+}
+
