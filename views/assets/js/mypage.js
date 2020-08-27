@@ -17,7 +17,7 @@ let settingFont = setting.querySelector("#font");
 let settingFontSize = setting.querySelector("#font-size");
 
 window.addEventListener("load",function(){
-    fetch("http://127.0.0.1:5500/user.json")
+    fetch("http://203.241.228.134:3000/user.json")
     .then(function(response){
         return response.json();
     })
