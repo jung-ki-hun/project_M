@@ -42,7 +42,6 @@ app.all('*',function(req,res){
     res.status(404).send('<h1>요청하신 서버에 접속 할 수가 없습니다.</h1>');
 });//서버 오류 출력 구문
 
-app.use('/',router);
 
 http.createServer(app).listen(app.get('port'),ip, function () {
 
