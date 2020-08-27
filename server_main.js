@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 var router = express.Router();
+
 router.route('/process/login').post(function(req,res){
     console.log("/process/login 라우팅 함수에서 받음.");
 
@@ -26,6 +27,7 @@ router.route('/process/login').post(function(req,res){
     res.write("<p>"+paramId+paramPassword+"</p>");
     res.end();
 })
+app.use('/',router);
 
 app.use(function (req, res, next) {
     console.log('첫 미들웨어 메인페이지 응답'+req.ip);
