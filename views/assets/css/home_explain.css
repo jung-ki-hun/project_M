@@ -1,0 +1,38 @@
+body{
+    background:rgb(228, 228, 228);
+}
+.explain{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+.explain .up{
+    height: 20em;
+    background: #437299;
+}
+.explain .box{
+    margin-top: -7em;
+    display:flex;
+    justify-content: center;
+}
+.explain .box img{
+    width:20em;
+    height:20em;
+    border: 1em solid #aed581;
+    border-radius: 0.5em;
+    margin:0px;
+    margin-left: 5em;    
+}
+.explain .box .sub-box{
+    background:#aed581;
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    margin: 0 30px;
+}
+.explain .box .sub-box span{
+    text-align:center;
+    display:block;
+    border-bottom:1px solid black;
+}
+
