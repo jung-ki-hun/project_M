@@ -1,4 +1,5 @@
 let infoJson = "";
+let fetchUrl = "http://203.241.228.134:3000/views/info.json"
 let machineCount = 0;
 let listUi = document.querySelector(".view");
 let spaceList = document.querySelector('#bylist_space');
@@ -137,7 +138,7 @@ function makeMenu(jsonfile){
 }
 
 function getInfo(){
-    fetch("http://127.0.0.1:5500/info.json")
+    fetch("http://203.241.228.134:3000/views/info.json")
         .then(function(response){            
             return response.json();
         })
@@ -146,6 +147,10 @@ function getInfo(){
             makeMenu(infoJson);
         });
 };
+
+function viewUrl(){
+    console.log(fetchUrl);
+}
 
 
 

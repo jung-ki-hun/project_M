@@ -345,6 +345,10 @@ ul{
     font-size:var(--font-nav-sub);
     border-top: 1px solid var(--color-border-nav);
     border-bottom: 1px solid var(--color-border-nav);
+    text-align:center;
+}
+.main > #menu-select .menu-item:nth-child(2){
+    margin-top: 10px;
 }
 .main > #menu-select a{
     color:var(--color-font-default-nav);

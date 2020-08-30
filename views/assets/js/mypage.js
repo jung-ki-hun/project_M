@@ -1,10 +1,12 @@
 let userInfo;
+let fetchUrl = "http://203.241.228.134:3000/user.json"
 
-let user = document.querySelector("#user");
-let machine = document.querySelector("#machine");
-let setting = document.querySelector("#setting");
+let mypage = document.querySelector(".mypage")
+let user = mypage.querySelector("#user");
+let machine = mypage.querySelector("#machine");
+let setting = mypage.querySelector("#setting");
 
-let userName = user.querySelector("#name");
+let userNameMyPage = user.querySelector("#name");
 let userBirth = user.querySelector("#birth");
 let userClass = user.querySelector("#class");
 
@@ -17,7 +19,7 @@ let settingFont = setting.querySelector("#font");
 let settingFontSize = setting.querySelector("#font-size");
 
 window.addEventListener("load",function(){
-    fetch("http://127.0.0.1:5500/user.json")
+    fetch(fetchUrl)
     .then(function(response){
         return response.json();
     })
@@ -27,8 +29,12 @@ window.addEventListener("load",function(){
     })
 });
 
+function viewUrl(){
+    console.log(fetchUrl);
+}
+
 function refreshInfo(){
-    userName.textContent = userInfo["Name"];
+    userNameMyPage.textContent = userInfo["Name"];
     userBirth.textContent = userInfo["Birthday"];
     userClass.textContent = userInfo["Class"];
 
