@@ -138,7 +138,7 @@ function makeMenu(jsonfile){
 }
 
 function getInfo(){
-    fetch("http://203.241.228.134:3000/views/info.json")
+    fetch(fetchUrl)
         .then(function(response){            
             return response.json();
         })
