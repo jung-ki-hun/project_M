@@ -20,6 +20,17 @@ humidity[0] = humiditybox.querySelector("#humidCurrent");
 humidity[1] = humiditybox.querySelector("#humidMin");
 humidity[2] = humiditybox.querySelector("#humidMax");
 
+var myHeader = new Headers();
+
+var myInit = {
+    method : 'GET',
+    headers : myHeader,
+    mode: 'no-cors',
+    cache : 'default'
+};
+
+var myRequest = new Request(fetchUrl, myInit);
+
 window.addEventListener("load", function(){
     menuBar.addEventListener("click", function(e){
         if(!e.target.classList.contains("select")) return;
@@ -34,6 +45,8 @@ window.addEventListener("load", function(){
     });
 
     reloadBtn.addEventListener("click", function(){
+        console.log("updata!",fetchUrl);
+        myRequest = new Request(fetchUrl, myInit);
         let spacechild = spaceList.childNodes;
         for(;spacechild[0] != null;)
             spacechild[0].remove();
@@ -138,7 +151,7 @@ function makeMenu(jsonfile){
 }
 
 function getInfo(){
-    fetch(fetchUrl)
+    fetch(myRequest)
         .then(function(response){            
             return response.json();
         })
