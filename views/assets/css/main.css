@@ -41,7 +41,7 @@
     --color-font-banner:#ffffff;
     --color-border-banner:#ffffff;
     --color-change-button:#03a9f4;
-    --font-title-banner:2.5em;
+    --font-title-banner:3em;
     --font-title-sub-banner: 1.8em;
     --font-button-banner:1.5em;
     --padding-button-banner:0.7em;
@@ -57,7 +57,7 @@
     --margin-button-share:1.5em;
     
     /* post 색상 크기 제어 */
-    --size-height-post: calc(75% - var(--size-header));
+    --size-height-post: calc(80% - var(--size-header));
     --size-content-width-post:35%;
     --padding-content-post:5em;
     --padding-button-post:2.5em;
@@ -103,7 +103,7 @@
     font-weight:normal;
     font-style:normal;
 }
-@media screen and (max-width:1700px){
+@media screen and (max-width:1650px){
     :root{
         /* header */
         --size-header: 5em;
@@ -144,7 +144,7 @@
 @media screen and (max-height:1000px){
     :root{
         /* post */
-        --size-height-post: calc(40em - var(--size-header));                
+        --size-height-post: calc(45em - var(--size-header));                
     }
 }
 @media screen and (max-width:975px){
@@ -392,11 +392,13 @@ ul{
     color:rgba(0,0,0,0.7);
     font-weight: bold;    
     margin-top:17px;    
+    text-align:left;
 }
 .main > #menu-select .myinfo .user .mail{
     grid-area: mail;
     color:rgba(0,0,0,0.5);
     font-size:11px;    
+    text-align:left;
 }
 .main > #menu-select .myinfo .user .logout{
     grid-area: logout;
@@ -415,7 +417,7 @@ ul{
 .main > #menu-select .myinfo .link{
     display:grid;    
     grid-area: link;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(2,1fr);
     grid-template-rows: 1fr;
     background:#79b8b1d7;
     border-top:1px solid #fff;
@@ -488,7 +490,7 @@ ul{
 .main > .banner{
     margin-top:var(--size-header);
     background-color:var(--color-background-banner);
-    height:var(--size-height-banner);
+    height:calc(100% - var(--size-header));
     display:flex;
     justify-content:center;
     align-items:center;
@@ -496,9 +498,7 @@ ul{
 .main > .banner .banner-inner{
     display:flex;
     flex-direction: column;
-    align-items:center;
-    margin-top:var(--margin-banner);
-    height:var(--size-height-inner-banner);
+    align-items:center;    
     color:var(--color-font-banner);
 }
 .main > .banner .banner-inner .banner-font{

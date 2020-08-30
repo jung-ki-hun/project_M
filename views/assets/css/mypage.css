@@ -11,7 +11,7 @@ body{
 .mypage{
     display:flex;
     margin-top:calc(var(--size-header) + 50px);
-    width:1100px;        
+    width:1100px;
     flex-wrap: wrap;
     justify-content:center;
     align-items: center;
