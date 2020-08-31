@@ -461,8 +461,11 @@ ul{
     display:flex;
     font-size:var(--font-content-action-bar);
 }
-.main > .action-bar li::before{
-    content:'>';
+.main > .action-bar li::after{
+    content:'> ';
+}
+.main > .action-bar li:last-child::after{
+    content:''
 }
 .main > .action-bar i{
     margin-right:var(--margin-action-bar);
@@ -474,10 +477,10 @@ ul{
     -webkit-transform:rotate(-180deg);
     transform:rotate(-180deg);
 
-    -moz-transition: -moz-transform var(--duration-animation-action-bar) ease-in-out;
-    -ms-transition: -ms-transform var(--duration-animation-action-bar) ease-in-out;
-    -webkit-transition: -webkit-transform var(--duration-animation-action-bar) ease-in-out;
-    transition: transform var(--duration-animation-action-bar) ease-in-out;
+    -moz-transition: -moz-transform var(--duration-animation-action-bar) ease;
+    -ms-transition: -ms-transform var(--duration-animation-action-bar) ease;
+    -webkit-transition: -webkit-transform var(--duration-animation-action-bar) ease;
+    transition: transform var(--duration-animation-action-bar) ease;
 }
 .main > .action-bar i.turn{
     -moz-transform:rotate(-360deg);

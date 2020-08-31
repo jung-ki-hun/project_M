@@ -14,7 +14,7 @@ actionBarButton.addEventListener("click", actionBarClick);
 
 setTimeout(function(){
     actionBarClick();
-    setTimeout(actionBarClick,1500);
+    setTimeout(actionBarClick,1800);
 },10);
 
 
