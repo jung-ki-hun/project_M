@@ -7,6 +7,10 @@ var cookieParser = require('cookie-parser');
 var ip ="203.241.228.134";
 var app = express();
 
+var errorHandler = require('errorhandler');
+var expressErrorHandler =require('express-error-handler');
+
+var expressSession = require('express-session');//세션
 
 app.set('port', process.env.PORT || 3000);//3000번 포트 개방
 app.use('/views', static(path.join(__dirname, 'views')));//--dirmane : js 파일이 있는 폴더경로
@@ -16,18 +20,59 @@ app.use(bodyParser.json());
 
 app.use(cookieParser());
 
+app.use(expressSession({
+	secret:'my key',
+	resave:true,
+    saveUninitialized:true
+    //store:db 관련 저장소 운영
+}));// 저장할 정보에 대해서 어떻게 할지..
+
 var router = express.Router();
 
-router.route('/process/login').post(function(req,res){
-    console.log("/process/login 라우팅 함수에서 받음.");
+// router.route('/process/login').post(function(req,res){
+//     console.log("/process/login 라우팅 함수에서 받음.");
 
-    var paramId = req.body.id ||req.query.id;
-    var paramPassword = req.body.password || req.query.password;
-    res.writeHead(200,{"content-Type":'text/html;charset=utf8'});//200 정상응답  
-    res.write("<p>"+paramId+paramPassword+"</p>");
-    res.end();
-})
+//     var paramId = req.body.id ||req.query.id;
+//     var paramPassword = req.body.password || req.query.password;
+//     res.writeHead(200,{"content-Type":'text/html;charset=utf8'});//200 정상응답  
+//     res.write("<p>"+paramId+paramPassword+"</p>");
+//     res.end();
+// })
+
+// 로그인 라우팅 함수 - 로그인 후 세션 저장함
+router.route('/process/login').post(function(req, res) {
+	console.log('/process/login 호출됨.');
+
+	var paramId = req.body.id || req.query.id;
+	var paramPassword = req.body.password || req.query.password;
+	
+	if (req.session.user) {
+		// 이미 로그인된 상태
+		console.log('이미 로그인되어 상품 페이지로 이동합니다.');
+		
+		res.redirect('/public/product.html');//로그인 되면 보여줄 화면..
+	} else {
+		// 세션 저장
+		req.session.user = {
+			id: paramId,
+			name: '소녀시대',
+			authorized: true
+		};
+		
+		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+		res.write('<h1>로그인 성공</h1>');
+		res.write('<div><p>Param id : ' + paramId + '</p></div>');
+		res.write('<div><p>Param password : ' + paramPassword + '</p></div>');
+		res.write("<br><br><a href='/process/product'>상품 페이지로 이동하기</a>");
+		res.end();
+	}
+});
+
 app.use('/',router);
+
+app.all('*',function(req,res){
+    res.status(404).send('<h1>요청하신 서버에 접속 할 수가 없습니다.</h1>');
+});//서버 오류 출력 구문
 
 app.use(function (req, res, next) {
     console.log('첫 미들웨어 메인페이지 응답'+req.ip);
@@ -40,9 +85,6 @@ app.use(function (req, res, next) {
 
 
 
-app.all('*',function(req,res){
-    res.status(404).send('<h1>요청하신 서버에 접속 할 수가 없습니다.</h1>');
-});//서버 오류 출력 구문
 
 
 http.createServer(app).listen(app.get('port'),ip, function () {

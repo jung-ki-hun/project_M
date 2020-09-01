@@ -19,21 +19,21 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-secret_file =os.path.join(Base_DIR,'secrets.json')
-with open(secret_file) as f:
-    secrets =json.loads(f.read())
-def get_secret(setting, secrets=secrets):
-    try:
-        return secrets[setting]
-    except KeyError:
-        error_msg = "Set the {0} environment variable".format(setting)
-        raise ImproperlyConfigured(error_msg)
+# secret_file =os.path.join(Base_DIR,'secrets.json')
+# with open(secret_file) as f:
+#     secrets =json.loads(f.read())
+# def get_secret(setting, secrets=secrets):
+#     try:
+#         return secrets[setting]
+#     except KeyError:
+#         error_msg = "Set the {0} environment variable".format(setting)
+#         raise ImproperlyConfigured(error_msg)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret("SECRET_KEY")
+SECRET_KEY ='11 & ^ 1r2e-5 * b6xjg2 ^ a0dhsax7i7 ^ -e7uj $ & vz4) # (tw @ 9-v = 61811'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = []
