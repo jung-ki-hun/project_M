@@ -3,21 +3,31 @@ from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.template.loader import render_to_string
-
+from django.views.generic import DetailView, ListView
 from blogs.models import Post, Comment,Category
 
 import json
 
-def category_list(request):
-    categories = Category.objects.all()
-    return render (request, 'blog/category_list.html', {'categories': categories})
-def category_detail(request, pk):
-    category = get_object_or_404(Category, pk=pk)
-
 def posts_list(request):
     posts = Post.objects.order_by('-created_at')
-
     return render(request, 'blogs/posts_list.html', context={'posts': posts})
+def posts_list2(request):
+    posts = Post.objects.order_by('-created_at')
+
+    return render(request, 'blogs/posts_list2.html', context={'posts2': posts})
+# def posts_list(request, category_slug=None):
+#     category = None
+#     categories = Category.objects.all()
+#     posts = Post.objects.filter(available=True)
+#     if category_slug:
+#         category = get_object_or_404(Category, slug=category_slug)
+#         posts = posts.filter(category=category)
+#     return render(request,
+#                   'blogs/posts_list.html',
+#                   {'category': category,
+#                    'categories': categories,
+#                    'posts': posts})
+#
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)

@@ -104,16 +104,14 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
               <h1>{% block title %}커뮤니티{% endblock %}</h1>
-              <h3>{% block title2 %} {% endblock %}</h3>
+        <h3>{% block title2 %}{% endblock %}</h3>
               <hr>
- {% for category in categories %}
+
               <div class="btn-group1">
-
-                <a href="{% url 'posts_list' %}" class="btn btn-primary btn-lg">{{ category.name }}</a>
-                <a href="{% url 'posts_list2' %}"class="btn btn-primary btn-lg">{{ category.name }}</a>
-
+                  <a href="{% url 'posts_list' %}" class="btn btn-info">후기게시판</a>
+                  <a href="{% url 'posts_list2' %}" class="btn btn-info">질문게시판</a>
               </div>
- {% endfor %}
+
               <span class="subheading"></span>
             </div>
           </div>
