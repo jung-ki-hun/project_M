@@ -462,7 +462,7 @@ ul{
     font-size:var(--font-content-action-bar);
 }
 .main > .action-bar li::after{
-    content:'> ';
+    content:'/';
 }
 .main > .action-bar li:last-child::after{
     content:''
