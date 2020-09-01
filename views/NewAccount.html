@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <script defer src="assets/js/css_main.js"></script>
+    <title>MEGA Brain IoT</title>
+</head>
+
+<body>
+    <!-- index main -->
+    <div class="main real">
+        <!-- header -->
+        <header id="main-header" class="main">
+            <img id="zero" class="logo scroll" src="images/logo/logo_transparent_wide.png">
+            <img id="zero" class="logo-mini scroll" src="images/logo/logo_transparent_mini.png">
+            <!-- <div class="location">ss</div> -->
+            <ul class="menu-bar">
+                <li class="login"><a href="login.html">Login</a></li>
+                <li class="menu-button">Menu</li>
+            </ul>
+        </header>
+        <!-- action bar -->
+        <div class="action-bar">
+            <ul class="content">
+                <li>Main</li>
+            </ul>
+            <i class="fas fa-angle-right action-bar-button"></i>
+        </div>
+        <!-- nav -->
+        <div id="menu-select">
+            <ul>
+                <li class="menu-item myinfo">
+                    <div class="user">
+                        <img src="" alt="">
+                        <span class="name">이름</span>
+                        <span class="logout">로그아웃</span>
+                        <span class="mail">이메일</span>
+                    </div>
+                    <div class="link">
+                        <a href="use/_mypage/mypage.html">내 정보</a>
+                        <a href="">설정</a>
+                        <a href="">3</a>
+                        <a href="">4</a>
+                    </div>
+                </li>
+                <li class="menu-item">2</li>
+                <li class="menu-item">3</li>
+            </ul>
+        </div>
+        <!-- 회원가입 (스크립트 스타일 포함)-->
+        <!-- 왼쪽, 오른쪽 바깥여백을 auto로 주면 중앙정렬된다.  -->
+        <script>
+            function domainCheck() {
+                var frm = document.signdata;  //폼이름이 enroll
+                if (frm.email_2_select.value == 0) {  //value값이 0이면, 즉 직접입력을 선택했을 경우,
+                    frm.email_2.value = "";
+                    frm.email_2.disabled = false;
+    
+                    //false값으로 바꿉니다. 즉, 직접 사용자가 입력할수있게 text가 활성화됩니다.
+                } else { //선택사항중 이메일을 선택했을 때
+                    frm.email_2.value = frm.email_2_select.value; //text에 이메일 주소가 들어갑니다.
+                    frm.email_2.disabled = true; //true값이 됩니다. 즉, 비활성화됩니다.
+                }
+            }
+        </script>
+            <style>
+                #wrap {
+                    width: 530px;
+                    margin-left: 40px;
+                    margin-right: auto;
+                    text-align:left;
+                }
+        
+                table {
+                    border: 3px solid skyblue
+                }
+        
+                td {
+                    border: 1px solid skyblue
+                }
+        
+                #title {
+                    background-color: skyblue
+                }
+            </style>
+        <div id="wrap" style="padding-top: 100px;padding-bottom: 280px;">
+            <br><br>
+            <b>
+                <font size="6" color="gray">회원가입</font>
+            </b>
+            <br><br>
+
+
+            <form name="signdata" method="post">
+                <table>
+                    <tr>
+                        <td id="title">아이디</td>
+                        <td>
+                            <input type="text" name="id" maxlength="20">
+                            <input type="button" value="중복확인">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="title">비밀번호</td>
+                        <td>
+                            <input type="password" name="password" maxlength="15">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="title">이름</td>
+                        <td>
+                            <input type="text" name="name" maxlength="40">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="title">성별</td>
+                        <td>
+                            <input type="radio" name="gender" value="남" checked>남
+                            <input type="radio" name="gender" value="여">여
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="title">생일</td>
+                        <td>
+                            <input type="text" name="birth_yy" maxlength="4" placeholder="년(4자)" size="6">
+                            <select name="birth_mm">
+                                <option value="">월</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <input type="text" name="birth_dd" maxlength="2" placeholder="일" size="4">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="title">이메일</td>
+                        <td>
+                            <input type="text" name="email_1" maxlength="30">@
+                            <input type="text" name="email_2" size="10">
+                            <select name="email_2_select" onchange="domainCheck();">
+                                <option value="0" selected="selected">직접입력</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="nate.com">nate.com</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="title">휴대전화</td>
+                        <td>
+                            <input type="text" name="phone" placeholder="하이픈(-)없이 입력"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="title">주소</td>
+                        <td>
+                            <input type="text" size="50" name="address" />
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="가입" /> <input type="button" value="취소">
+            </form>
+        </div>
+        <!-- 회원가입 끝-->
+        <!-- footer -->
+        <footer>
+
+            <span class="footer-copy">&copy;Untitled.Design:<span>MEGA Brain IoT</span></span>
+        </footer>
+    </div>
+</body>
+
+</html>
