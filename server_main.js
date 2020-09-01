@@ -57,7 +57,7 @@ router.route('/process/login').post(function(req, res) {
 			id: paramId,
 			name: '소녀시대',
 			authorized: true
-		};
+		};//db 만들어서 가져 와야 될 코드
 		
 		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
 		res.write('<h1>로그인 성공</h1>');
@@ -67,7 +67,38 @@ router.route('/process/login').post(function(req, res) {
 		res.end();
 	}
 });
+// 로그아웃 라우팅 함수 - 로그아웃 후 세션 삭제함
+router.route('/process/logout').get(function(req, res) {
 
+	console.log('/process/logout 호출됨.');
+	
+	if (req.session.user) {
+		// 로그인된 상태
+		console.log('로그아웃합니다.');
+		
+		req.session.destroy(function(err) {
+			if (err) {throw err;}
+			
+			console.log('세션을 삭제하고 로그아웃되었습니다.');
+			res.redirect('/public/login2.html');
+		});
+	} else {
+		// 로그인 안된 상태
+		console.log('아직 로그인되어있지 않습니다.');
+		
+		res.redirect('/public/login2.html');
+	}
+});
+
+// 상품정보 라우팅 함수
+router.route('/process/product').get(function(req, res) {
+	console.log('/process/product 호출됨.');
+	
+	if (req.session.user) {
+		res.redirect('/public/product.html');
+	} else {
+		res.redirect('/public/login2.html');
+	}
 app.use('/',router);
 
 app.all('*',function(req,res){
@@ -82,7 +113,6 @@ app.use(function (req, res, next) {
     
     next();
 });// 서버 정상가동 확인 및 접속자 ip 출력
-
 
 
 
