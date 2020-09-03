@@ -3,13 +3,16 @@ body{
 }
 
 .intro{
-    margin-top:var(--size-height-action-bar);    
+    margin-top:var(--size-height-action-bar); 
+    display: flex;   
+    flex-direction: column;
+    align-items: center;
 }
 
-.intro_main{
-    padding: 0 5em 0 5em;
-    width:calc(100% - 10em);
-    height:calc(100% - 10em);
+.intro_main{    
+    width:calc(100% - 5em);
+    height:calc(100% - 5em);
+    padding:0;
 }
 .tra{
     float:left;
@@ -64,14 +67,42 @@ body{
     display: block;
 }
 
-.intro_main > .maker{
-    clear:both;
+.intro_main > .maker_title{
+    font-weight: bold;
+}
+
+.intro_main > .maker{    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.intro_main > .maker .member{
+    width:255px;
+    height: 80px;
+    background: rgb(200, 200, 200);
+    padding:10px;
+    border-style:ridge;
+    margin:5px;
+}
+
+.intro_main > .maker .member .name{
+    font-weight: bold;
+}
+.intro_main > .maker .member .number{
+
+}
+.intro_main > .maker .member .number::after{
+    content: "학번"
+}
+.intro_main > .maker .member .work{
+    font-size:14px;
+    margin-left:10px;
+    margin-top:10px;
 }
 
 footer[class="intro"]{    
-    clear:both;
-    position: absolute;
-    bottom:0px;
+    clear:both;    
     width:100%;       
     color:#8e8e8e;
     border-top:1px solid black;
@@ -94,17 +125,14 @@ footer[class="intro"]{
     }
     .intro{
         height: auto;
-    }
-    .intro_main{
-        padding: 0 5em;
-    }
+    }    
 }
 
 
 @media screen and (max-width: 736px) {
     #header .login{
         visibility: hidden;
-    }
+    }    
     .intro_main .content{ 
         font-size: 1.1em;
     }
@@ -117,4 +145,5 @@ footer[class="intro"]{
     .intro_main > .explain{
         font-size: 1.2em;
     }
+    
 }
