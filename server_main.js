@@ -99,6 +99,9 @@ router.route('/process/product').get(function(req, res) {
 	} else {
 		res.redirect('/public/login2.html');
 	}
+});
+
+//dk
 app.use('/',router);
 
 app.all('*',function(req,res){
