@@ -56,13 +56,13 @@
     transform:rotate(-90deg);
 }
 .running .list #list_root{
-    background:#aed581;
+    background:#26c6da;
 }
 .running .list #list_space{
-    background:#ff8a65;
+    background:#4db6ac;
 }
 .running .list #bylist_space{
-    background: #4db6ac;
+    background: #81c784;
 }
 .running .list .invisible{
     display:none !important;    
