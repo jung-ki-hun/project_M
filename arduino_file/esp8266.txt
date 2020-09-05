@@ -13,8 +13,8 @@
 //*************************
 SoftwareSerial esp01(txPin, rxPin); // SoftwareSerial NAME(TX, RX);
 String sendData(String command, const int timeout, boolean debug);
-//const char wifi_name[] ="V50 kihun";
-//const char wifi_pw[] ="12345678";
+//const char wifi_name[] ="122b";
+//const char wifi_pw[] ="122b122b";
 int server_connect = 0; //define 0 = disconnet
 
 //*************************
@@ -191,7 +191,7 @@ void setup()
   esp01.begin(9600);  //wifi 모듈 통신속도 설정
   pinMode(pin_fan, OUTPUT);
   pinMode(pin_gasgi, OUTPUT);
-  //sendData("AT+CWLAP\r\n",3000,DEBUG); //주변 와이파이 리스트 출력
+  sendData("AT+CWLAP\r\n",3000,DEBUG); //주변 와이파이 리스트 출력
   setting_server(); //서버 설정하는 함수
 
 } //초기화
