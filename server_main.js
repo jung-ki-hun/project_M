@@ -50,7 +50,7 @@ router.route('/process/login').post(function(req, res) {
 		// 이미 로그인된 상태
 		console.log('이미 로그인되어 상품 페이지로 이동합니다.');
 		
-		res.redirect('/public/product.html');//로그인 되면 보여줄 화면..
+		res.redirect('/views/index.html');//로그인 되면 보여줄 화면..
 	} else {
 		// 세션 저장
 		req.session.user = {
@@ -58,13 +58,16 @@ router.route('/process/login').post(function(req, res) {
 			name: '소녀시대',
 			authorized: true
 		};//db 만들어서 가져 와야 될 코드
-		
+		/*
 		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
 		res.write('<h1>로그인 성공</h1>');
 		res.write('<div><p>Param id : ' + paramId + '</p></div>');
 		res.write('<div><p>Param password : ' + paramPassword + '</p></div>');
 		res.write("<br><br><a href='/process/product'>상품 페이지로 이동하기</a>");
-		res.end();
+		res.end();*/
+		// 홈페이지창에 표시하는 기능 추후 수정
+		// 수정 예정안
+		// 서버 콘솔창에 표시 -> 접속자 ip, 식별자, 성공여부
 	}
 });
 // 로그아웃 라우팅 함수 - 로그아웃 후 세션 삭제함
@@ -99,7 +102,7 @@ router.route('/process/product').get(function(req, res) {
 	} else {
 		res.redirect('/public/login2.html');
 	}
-});
+});//로그인 상태일때 접속하게 해야됨!!
 
 //dk
 app.use('/',router);
