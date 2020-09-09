@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/account.css">
     <script defer src="assets/js/css_main.js"></script>
     <title>MEGA Brain IoT</title>
 </head>
 
 <body>
     <!-- index main -->
-    <div class="main real">
+    <div class="main">
         <!-- header -->
         <header id="main-header" class="main">
             <a href="index.html"><img id="zero" class="logo scroll" src="images/logo/logo_transparent_wide.png"></a>
@@ -34,7 +35,7 @@
             <ul>
                 <li class="menu-item myinfo">
                     <div class="user">
-                        <img src="" alt="">
+                        <img src="images/main/default.png" alt="">
                         <span class="name">이름</span>
                         <span class="logout">로그아웃</span>
                         <span class="mail">이메일</span>
@@ -47,50 +48,32 @@
                 <br>
             </ul>
         </div>
-        <!-- 회원가입 (스크립트 스타일 포함)-->
-        <!-- 왼쪽, 오른쪽 바깥여백을 auto로 주면 중앙정렬된다.  -->
-        <script>
-            function domainCheck() {
-                var frm = document.signdata;  //폼이름이 enroll
-                if (frm.email_2_select.value == 0) {  //value값이 0이면, 즉 직접입력을 선택했을 경우,
-                    frm.email_2.value = "";
-                    frm.email_2.disabled = false;
-    
-                    //false값으로 바꿉니다. 즉, 직접 사용자가 입력할수있게 text가 활성화됩니다.
-                } else { //선택사항중 이메일을 선택했을 때
-                    frm.email_2.value = frm.email_2_select.value; //text에 이메일 주소가 들어갑니다.
-                    frm.email_2.disabled = true; //true값이 됩니다. 즉, 비활성화됩니다.
-                }
+    </div>
+    <!-- 회원가입 (스크립트 스타일 포함)-->
+    <!-- 왼쪽, 오른쪽 바깥여백을 auto로 주면 중앙정렬된다.  -->
+    <script>
+        function domainCheck() {
+            var frm = document.signdata;  //폼이름이 enroll
+            if (frm.email_2_select.value == 0) {  //value값이 0이면, 즉 직접입력을 선택했을 경우,
+                frm.email_2.value = "";
+                frm.email_2.disabled = false;
+
+                //false값으로 바꿉니다. 즉, 직접 사용자가 입력할수있게 text가 활성화됩니다.
+            } else { //선택사항중 이메일을 선택했을 때
+                frm.email_2.value = frm.email_2_select.value; //text에 이메일 주소가 들어갑니다.
+                frm.email_2.disabled = true; //true값이 됩니다. 즉, 비활성화됩니다.
             }
-        </script>
-            <style>
-                #wrap {
-                    width: 530px;
-                    margin-left: 40px;
-                    margin-right: auto;
-                    text-align:left;
-                }
-        
-                table {
-                    border: 3px solid skyblue
-                }
-        
-                td {
-                    border: 1px solid skyblue
-                }
-        
-                #title {
-                    background-color: skyblue
-                }
-            </style>
-        <div id="wrap" style="padding-top: 100px;padding-bottom: 280px;">
+        }
+    </script>        
+    <div class="register">
+        <div id="wrap">
             <br><br>
             <b>
-                <font size="6" color="gray">회원가입</font>
+                <font size="6" color="gray">회원가입 디자인 수정중</font>
             </b>
             <br><br>
-
-
+    
+    
             <form name="signdata" method="post">
                 <table>
                     <tr>
@@ -100,21 +83,21 @@
                             <input type="button" value="중복확인">
                         </td>
                     </tr>
-
+    
                     <tr>
                         <td id="title">비밀번호</td>
                         <td>
                             <input type="password" name="password" maxlength="15">
                         </td>
                     </tr>
-
+    
                     <tr>
                         <td id="title">이름</td>
                         <td>
                             <input type="text" name="name" maxlength="40">
                         </td>
                     </tr>
-
+    
                     <tr>
                         <td id="title">성별</td>
                         <td>
@@ -122,7 +105,7 @@
                             <input type="radio" name="gender" value="여">여
                         </td>
                     </tr>
-
+    
                     <tr>
                         <td id="title">생일</td>
                         <td>
@@ -145,7 +128,7 @@
                             <input type="text" name="birth_dd" maxlength="2" placeholder="일" size="4">
                         </td>
                     </tr>
-
+    
                     <tr>
                         <td id="title">이메일</td>
                         <td>
@@ -160,7 +143,7 @@
                             </select>
                         </td>
                     </tr>
-
+    
                     <tr>
                         <td id="title">휴대전화</td>
                         <td>
@@ -178,13 +161,7 @@
                 <input type="submit" value="가입" /> <input type="button" value="취소" onclick="location.href='./index.html'" >
             </form> <!-- 가입 버튼 누르면 db로 파일 전송기능 추가!!!-->
         </div>
-        <!-- 회원가입 끝-->
-        <!-- footer -->
-        <footer>
-
-            <span class="footer-copy">&copy;Untitled.Design:<span>MEGA Brain IoT</span></span>
-        </footer>
     </div>
+    <!-- 회원가입 끝-->
 </body>
-
 </html>
