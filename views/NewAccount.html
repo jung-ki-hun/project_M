@@ -67,17 +67,15 @@
     </script>        
     <div class="register">
         <div id="wrap">
-            <br><br>
-            <b>
-                <font size="6" color="gray">회원가입 디자인 수정중</font>
-            </b>
-            <br><br>
+            <div class="title">
+                Register
+            </div>
     
     
             <form name="signdata" method="post">
-                <table>
+                <table s>
                     <tr>
-                        <td id="title">아이디</td>
+                        <th id="title">아이디</th>
                         <td>
                             <input type="text" name="id" maxlength="20">
                             <input type="button" value="중복확인">
@@ -85,21 +83,21 @@
                     </tr>
     
                     <tr>
-                        <td id="title">비밀번호</td>
+                        <th id="title">비밀번호</th>
                         <td>
                             <input type="password" name="password" maxlength="15">
                         </td>
                     </tr>
     
                     <tr>
-                        <td id="title">이름</td>
+                        <th id="title">이름</th>
                         <td>
                             <input type="text" name="name" maxlength="40">
                         </td>
                     </tr>
     
                     <tr>
-                        <td id="title">성별</td>
+                        <th id="title">성별</th>
                         <td>
                             <input type="radio" name="gender" value="남" checked>남
                             <input type="radio" name="gender" value="여">여
@@ -107,10 +105,11 @@
                     </tr>
     
                     <tr>
-                        <td id="title">생일</td>
+                        <th id="title">생일</th>
                         <td>
-                            <input type="text" name="birth_yy" maxlength="4" placeholder="년(4자)" size="6">
-                            <select name="birth_mm">
+                            <input type="date" name="userBirthday" value="2000-01-01" id="Birthday">
+                            <!-- <input id="year" type="text" name="birth_yy" maxlength="4" placeholder="년(4자)" size="6">
+                            <select id="month" name="birth_mm">
                                 <option value="">월</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
@@ -125,40 +124,41 @@
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>
-                            <input type="text" name="birth_dd" maxlength="2" placeholder="일" size="4">
+                            <input id="day" type="text" name="birth_dd" maxlength="2" placeholder="일" size="4"> -->
                         </td>
                     </tr>
     
                     <tr>
-                        <td id="title">이메일</td>
+                        <th id="title">이메일</th>
                         <td>
-                            <input type="text" name="email_1" maxlength="30">@
-                            <input type="text" name="email_2" size="10">
-                            <select name="email_2_select" onchange="domainCheck();">
-                                <option value="0" selected="selected">직접입력</option>
+                            <input id="email" type="text" name="email_1" maxlength="30"> @
+                            <input id="subEmail" type="text" name="email_2" size="10" list="emailInput">
+                            <datalist id="emailInput" name="email_2_select" onchange="domainCheck();">
+                                <option value="직접입력" selected="selected">직접입력</option>
                                 <option value="naver.com">naver.com</option>
                                 <option value="daum.net">daum.net</option>
                                 <option value="gmail.com">gmail.com</option>
                                 <option value="nate.com">nate.com</option>
-                            </select>
+                            </datalist>                            
                         </td>
-                    </tr>
-    
+                    </tr>                    
                     <tr>
-                        <td id="title">휴대전화</td>
+                        <th id="title">휴대전화</th>
                         <td>
                             <input type="text" name="phone" placeholder="하이픈(-)없이 입력"/>
                         </td>
                     </tr>
                     <tr>
-                        <td id="title">주소</td>
+                        <th id="title">주소</th>
                         <td>
-                            <input type="text" size="50" name="address" />
+                            <input id="address" type="text" size="50" name="address" />
                         </td>
                     </tr>
                 </table>
                 <br>
-                <input type="submit" value="가입" /> <input type="button" value="취소" onclick="location.href='./index.html'" >
+                <div class="btn">                    
+                    <input type="submit" value="가입" /> <input type="button" value="취소" onclick="location.href='./index.html'" >
+                </div>
             </form> <!-- 가입 버튼 누르면 db로 파일 전송기능 추가!!!-->
         </div>
     </div>
