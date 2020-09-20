@@ -534,12 +534,19 @@ ul{
     background-color:var(--color-change-button);
 }
 /* banner-share */
-.main > .banner .banner-inner .banner-button-box{
+
+.main.share{
+    height:calc(100% - var(--size-header));
+}
+.main.share .banner.share{
+    height:100%;
+}
+.main > .banner.share .banner-inner .banner-button-box{
     display:flex;
     align-items:center;
     justify-content: center;
 }
-.main > .banner .banner-inner .banner-button-box li{
+.main > .banner.share .banner-inner .banner-button-box li{
     margin-top:var(--margin-button-banner);
     margin-right:var(--margin-button-share);
     font-size:var(--font-button-banner);
@@ -552,7 +559,7 @@ ul{
     -webkit-transition: background var(--duration-animation-header) ease-in-out;
     transition: background var(--duration-animation-banner) ease-in-out;    
 }
-.main > .banner .banner-inner .banner-button-box li:hover{
+.main > .banner.share .banner-inner .banner-button-box li:hover{
     background-color:var(--color-change-button);
 }
 /* loginpop */
